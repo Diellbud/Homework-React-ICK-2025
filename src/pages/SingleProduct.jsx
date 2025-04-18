@@ -1,12 +1,12 @@
-import React from 'react'
-import productData from '.././data/ProductData';
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom';
 
 function SingleProduct() {
     const { id } = useParams();
-    const product = productData.find((item) => item.id === parseInt(id));
+    const {product} = useContext(ProductContext)
+    const productItem = product.find((item) => item.id === parseInt(id));
 
-    if (!product) {
+    if (!productItem) {
         return <h1 className='text-5xl text-center m-50'>Product not found</h1>;
     }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-
+import { ProductProvider } from "./components/Context/ProductContext.jsx";
 import App from "./App.jsx";
 import "./style.css"
 
@@ -28,7 +28,9 @@ const router = createBrowserRouter([
   ]);
 
 root.render(
+  <ProductProvider>
     <React.StrictMode>
         <RouterProvider router={router} />
     </React.StrictMode>
+    </ProductProvider>
 )
