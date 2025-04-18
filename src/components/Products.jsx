@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
+import {Link} from "react-router-dom";
 import Card from "./shared/Card";
 
 
@@ -39,6 +39,7 @@ function Products({productData ,deleteProduct}) {
                     />
                 </form>
             </div>
+            <Link className="ml-10 inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 font-semibold" to="./pages/tableFilePage.jsx">Go to Admin View</Link>
             <div className="mx-auto max-w-2xl sm:py-20 lg:max-w-7xl">
                 <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                     {searchQuery==="" ? (productData.map((item) => (
